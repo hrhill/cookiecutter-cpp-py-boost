@@ -2,7 +2,7 @@
 
 {{cookiecutter.description}}
 
-## Pre-requisites
+## Prerequisites
 
 ## Getting started
 
