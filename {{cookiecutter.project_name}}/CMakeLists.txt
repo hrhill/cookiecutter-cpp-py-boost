@@ -8,13 +8,21 @@ include(CheckLibraryExists)
 include(CTest)
 include(ExternalProject)
 
-find_package(PythonLibs 3.0 REQUIRED)
+find_package(PythonLibs 3.4 REQUIRED)
 find_package(Boost 1.64.0 COMPONENTS python3 unit_test_framework REQUIRED)
 
 add_subdirectory(src)
 add_subdirectory(tests)
 add_subdirectory(benchmarks)
 
+# Python wrapper
+configure_file(${PROJECT_SOURCE_DIR}/setup.py ${PROJECT_BINARY_DIR})
+add_custom_target(wrapper
+    COMMAND cp -r ${PROJECT_SOURCE_DIR}/{{cookiecutter.project_name}} ${PROJECT_BINARY_DIR}
+    COMMAND python setup.py clean
+    COMMAND python setup.py build
+    COMMAND python setup.py test
+)
 
 # Documentation
 # Doxygen

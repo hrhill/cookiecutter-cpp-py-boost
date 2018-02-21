@@ -1,0 +1,4 @@
+add_executable(failing_test failing_test.cpp)
+target_link_libraries(failing_test Boost::unit_test_framework)
+target_compile_definitions(failing_test PRIVATE BOOST_TEST_DYN_LINK)
+add_test(test_failing_test failing_test)

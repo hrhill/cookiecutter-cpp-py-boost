@@ -2,5 +2,5 @@
     "project_name" : "project_name",
     "description" : "Provide a one line summary of the functionality",
     "author" : "Author name",
-    "email_address" : "Email address"
+    "author_email" : "Author email"
 }
