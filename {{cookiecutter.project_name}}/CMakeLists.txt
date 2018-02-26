@@ -17,6 +17,14 @@ add_subdirectory(benchmarks)
 
 # Python wrapper
 configure_file(${PROJECT_SOURCE_DIR}/setup.py ${PROJECT_BINARY_DIR})
+configure_file(
+    ${PROJECT_SOURCE_DIR}/config/version.hpp.in
+    ${PROJECT_BINARY_DIR}/include/{{cookiecutter.project_name}}/version.hpp)
+configure_file(
+    ${PROJECT_SOURCE_DIR}/config/version_test.cpp.in
+    ${PROJECT_BINARY_DIR}/version_test.cpp)
+
+
 add_custom_target(wrapper
     COMMAND cp -r ${PROJECT_SOURCE_DIR}/{{cookiecutter.project_name}} ${PROJECT_BINARY_DIR}
     COMMAND python setup.py clean

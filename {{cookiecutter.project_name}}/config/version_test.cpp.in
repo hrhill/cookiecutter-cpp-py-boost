@@ -1,0 +1,12 @@
+#define BOOST_TEST_MODULE version_test
+
+#include <boost/test/unit_test.hpp>
+
+#include "{{cookiecutter.project_name}}/version.hpp"
+
+BOOST_AUTO_TEST_CASE(version_check)
+{
+    BOOST_CHECK_EQUAL(
+        {{cookiecutter.namespace}}::version::string(),
+        "@{{cookiecutter.project_name}}_VERSION@");
+}

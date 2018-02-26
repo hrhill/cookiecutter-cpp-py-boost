@@ -1,0 +1,34 @@
+#ifndef {{cookiecutter.project_name|upper}}_VERSION_HPP_
+#define {{cookiecutter.project_name|upper}}_VERSION_HPP_
+
+#include <string>
+
+namespace {{cookiecutter.namespace}}
+{
+#define {{cookiecutter.project_name|upper}}_VERSION_MAJOR @{{cookiecutter.project_name}}_VERSION_MAJOR@
+#define {{cookiecutter.project_name|upper}}_VERSION_MINOR @{{cookiecutter.project_name}}_VERSION_MINOR@
+#define {{cookiecutter.project_name|upper}}_VERSION_PATCH @{{cookiecutter.project_name}}_VERSION_PATCH@
+#define {{cookiecutter.project_name|upper}}_VERSION \
+    ( {{cookiecutter.project_name}}_VERSION_MAJOR * 100000 \
+    + {{cookiecutter.project_name}}_VERSION_MINOR * 100 \
+    + {{cookiecutter.project_name}}_VERSION_PATCH )
+
+struct version
+{
+    static constexpr int major = {{cookiecutter.project_name|upper}}_VERSION_MAJOR;
+    static constexpr int minor = {{cookiecutter.project_name|upper}}_VERSION_MINOR;
+    static constexpr int patch = {{cookiecutter.project_name|upper}}_VERSION_PATCH;
+ 
+    static std::string
+    string()
+    {
+        return std::to_string(major) 
+                + "." + std::to_string(minor)
+                + "." + std::to_string(patch);
+    }
+};
+
+}
+
+#endif
+

@@ -1,5 +1,6 @@
 {
     "project_name" : "project_name",
+    "namespace" : "{{cookiecutter.project_name}}",
     "description" : "Provide a one line summary of the functionality",
     "author" : "Author name",
     "author_email" : "Author email"
