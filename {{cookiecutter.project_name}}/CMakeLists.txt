@@ -24,15 +24,9 @@ configure_file(
     ${PROJECT_SOURCE_DIR}/config/version_test.cpp.in
     ${PROJECT_BINARY_DIR}/version_test.cpp)
 
+file(WRITE ${PROJECT_BINARY_DIR}/{{cookiecutter.project_name}}/__init__.py 
+    "from _{{cookiecutter.project_name}} import *")
 
-add_custom_target(wrapper
-    COMMAND cp -r ${PROJECT_SOURCE_DIR}/{{cookiecutter.project_name}} ${PROJECT_BINARY_DIR}
-    COMMAND python setup.py clean
-    COMMAND python setup.py build
-    COMMAND python setup.py test
-)
-
-# Documentation
 # Doxygen
 find_package(Doxygen REQUIRED dot)
 if(DOXYGEN_FOUND)
