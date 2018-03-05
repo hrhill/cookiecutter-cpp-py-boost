@@ -4,13 +4,24 @@
 
 ## Prerequisites
 
+ - cmake
+ - C++ compiler
+
 ## Getting started
 
 ## Building
 
+ - mkdir build; cd build
+ - cmake <path_to_source>
+ - make
+
 ## Running the tests
 
+ - ctest
+
 ## Installing
+
+ - sudo make install
 
 ## Contributing
 
