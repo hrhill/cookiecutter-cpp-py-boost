@@ -6,7 +6,9 @@ project({{cookiecutter.project_name}}
 include(CheckIncludeFiles)
 include(CheckLibraryExists)
 include(CTest)
-include(ExternalProject)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_CXX_STANDARD 14)
 
 find_package(PythonLibs 3.4 REQUIRED)
 find_package(Boost 1.64.0 COMPONENTS python3 unit_test_framework REQUIRED)
