@@ -7,7 +7,7 @@ click==6.7
 cookiecutter==2.1.1
 future==0.16.0
 idna==2.6
-Jinja2==2.11.3
+Jinja2==3.1.6
 jinja2-time==0.2.0
 MarkupSafe==1.0
 pluggy==0.6.0
